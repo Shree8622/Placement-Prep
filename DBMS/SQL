@@ -14,3 +14,120 @@
         One or many of the preset values
         Ex: Question tags {Array,DP,Hashmap} => question can have mulitple of these
     - JSON [Advanced datatypes]
+- Commands
+    - DDL {Data definition Language}
+        - CREATE TABLE table_name(attr1 datatype,attr2 datatype)
+        - ALTER TABLE 
+        - DROP
+        - TRUNCATE
+        - RENAME
+    - DRL {Data Retreival Language}
+        - SELECT
+    - DML {Data manipulation Language}
+        - INSERT
+        - UPDATE
+            ON UPDATE CASCADE
+                - lets say u changed the id of a student from 51 to 01
+                - now in the child table that value will be changed 
+        - DELETE
+            ON DELETE CASCADE
+                - Deletion of an entry from the parent deletes the child entry
+            ON DELETE SET NULL  
+                - Deletion will update child table iwth a null value
+            
+    - DCL {Data Control Language}
+        - GRANT
+        - REVOKE
+    - TCL {Transaction Control Language}
+        - START TRANSACTION
+        - COMMIT 
+        - ROLLBACK
+        - SAVEPOINT
+- Spl commands
+    - AUTO_INCREMENT => automatic increment for a value 
+        Ex: CREATE TABLE me(id INT NOT NULL AUTO_INCREMENT, name VARCHAR)
+
+- DQL stuff
+    - Can we use select without 'from' ?
+        Yes. Using dual tables. Basically the db system creates temporary table to implement whatever operation you pass into select
+         
+        Ex: SELECT 5+5;
+            SELECT now(); -> returns server time
+            SELECT lcase('ABCDabcd') => 'abcdabcd'
+            SELECT ucase('ABCDabcd') => 'ABCDABCD'
+    
+    - Patterns searching
+        we use 'LIKE' command for this
+        - pattern specifiers: 
+            - % => for any length of letters
+            - _ => for only one character
+            - * => for any number of characters 'ab*' accepts 'abababab'
+    - Sorting
+        ORDER BY (Attr name)
+            - ORDER BY {attr} ASC => ascending
+            - ORDER BY {atte} DESC => descending
+    -  Aggregation functions 
+        They apply some math/logical functions on the data records in the given attr column
+        - COUNT
+        - MIN
+        - MAX
+        - SUM
+    - GROUP BY.. HAVING
+        - used for conditional group by clause
+        - filters elements from the formed groups.. 
+        unlike WHERE => this filters from the whole table
+- DDL 
+    - CHECK constraint
+        - CONSTRAINT constraint_name CHECK(condn)
+    - DEFAULT
+        - sets a default value
+- DML
+    - REPLACE
+        - Inserts entry into the table if the entry isnt present
+        or else replaces the entry 
+        [with the same PK]
+        Syntax: REPLACE INTO table_name (attr1,attr2) values (val1,val2)
+- JOINS*
+    - INNER JOIN    
+        - Only tuples which have a entry in both the tables will be present in the resultant table {tables should have a common attr}
+        - The final table will have all the attributes from table1,table2
+        Syntax: SELECT col_list from table1 INNER JOIN table2 ON CONDITION 
+    
+    - OUTER JOIN    
+        - LEFT JOIN 
+            - Has all the tuples from the left table + the tuples from right table that satisfy the given condition 
+            Syntax: SELECT col_list from table1 LEFT JOIN table2 ON CONDITION
+        - RIGHT JOIN 
+            - Has all the tuples from the right table + the tuples from the left table which match the given condition
+            Syntax: SELECT col_list from table1 RIGHT JOIN table2 ON CONDITION
+        - FULL JOIN
+            LEFT JOIN U RIGHT JOIN 
+        - CROSS JOIN    
+            - Cartesian product of both relations
+        - Self JOIN 
+            Ex: Employee manages employee 
+            Syntax: SELECT e1.id,e2.id,e2.name from Employee as e1 INNER JOIN Employee as e2 where e1.mgr_id = e2.id 
+            => Considering e1 has a attr mgr_id which is the id of the manager
+    - Can we use join without using JOIN keyword? 
+        Yes. Use ',' in the from part in select 
+        Ex: SELECT * FROM Employee as e, Client as c where e.client_id = c.id 
+- SET OPERATIONS
+    * Only applicable if both the relations have the same attributes (same number and same names and types)
+    * Used to concat one or more SELECT statements
+    - UNION 
+    - INTERSECTION 
+        - emulated
+        Syntax: SELECT DISTINCT id from T1 INNER JOIN T2 using(id)
+    - MINUS
+        - emulated
+        T1 - T2
+        Syntax: select id from T1 LEFT JOIN T2 where T2.id IS NULL;
+
+- Sub queries (Nested queries)
+    SELECT * FROM t1 WHERE t1.id in (SELECT * FROM t2 where location like 'tumkur'); 
+    {The inner query isnt dependent on the table used in the outer query}
+- Correlated nested queries
+    SELECT * FROM t1 as t WHERE EXISTS (SELECT * from t2 where location like 'tumkur' AND t2.income = t.salary);
+    {The inner query is dependent on the relation present in the outer query}
+- SQL views 
+    Syntax: CREATE VIEW view_name AS SELECT a1,a2 from t1;
