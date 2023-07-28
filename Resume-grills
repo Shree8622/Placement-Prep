@@ -1,0 +1,17 @@
+- Skills:
+    - Python
+        - dynamically typed
+            - The association of a variable type is done during execution
+        - interpreted
+            - Runs with an interpreter. The translate decode and execute happen parallely
+        - PEP 8 Python Enhancement Proposal
+            - Style and the syntactic decisions about python
+        - docstring
+            '''
+            ''' -> docstrings
+        - Pass by reference always:- actual value is passed
+        - *args and **kwargs
+            arguments and keyword arguments
+    - Flask
+        - based on wsgi (web server gateway interface)
+        - jinja2 template engine

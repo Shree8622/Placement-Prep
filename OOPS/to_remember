@@ -1,0 +1,53 @@
+- Tell me about OOPS
+    Oops is a programming paradigm which relies on the concepts of classes and objects (Basically all problems are broken down and represented in entities like objects) 
+    It has 4 main properties: Abstraction, Encapsulation,Polymorphism, Inheritance
+
+- What is a programming paradigm? (Follow up)
+    The different ways/styles in which a given program/programming language can be organised
+    - Imperative 
+    - Logical 
+    - Functional 
+    - Object-oriented
+
+- Polymorphism:
+    Representation of same object in multiple ways
+    Types:
+    - Function overriding(dynamic)
+    - Function overloading(static)
+    
+    Real life ex:- A person at different times (Office,Home,Party)
+
+- Inheritance:
+    An object acquires certain properties from its parent class
+    Types:- 
+    - single level
+    - hierarchial
+    - multi level
+    - multiple (supported oly by cpp)
+    - hybrid (supported oly by cpp)
+
+    Real life ex:- Humans (eat,breathe,sleep from parents)
+
+- Encapsulation
+    Wrapping up of data members and member functions into one single entity
+
+    Real life ex:- School bag
+
+- Abstaction 
+    Hiding of non essential features of a given object and displaying the required/necessary elements
+
+    Real life ex:- ATM machine
+
+----------------------Surprises------------------------------
+- Cpp allows multiple inheritance hence doesnt have super keyword
+
+- Operators that cant be overloaded are  
+	. (dot)  
+	::(scope resolution) 
+	?:(ternary)   
+	sizeof() 
+
+- 'this' operator is used with '->' in cpp whereas '.' in java
+
+ 
+

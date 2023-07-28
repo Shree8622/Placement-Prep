@@ -1,0 +1,29 @@
+- what is the need of the database?
+    - to store triggers and actions at a centralised location
+    - would be used in reconstruction of the logstash configuration file
+    - Centralised datarepo is required to store the user manual triggers
+- sqlite3 
+ -  mysql vs sqlite3 
+    - mysql is server based whereas sqlite is not
+    - smaller (library is in KB whereas 600MB in mysql)
+    - easy setup and ease of use for testing
+ - issues of sqlite: 
+    - user management (multiple user logins)
+    - weaker security 
+    - less efficient concurrency control 
+- why not no-sql
+ - dealing with relationships between the entites in an optimised way
+ - transactions.. removal and addition of ml-triggers
+ - We dont have large amount of unordered data.. which is a perfect usecase for no-sql
+ - we have constraints for each attributes.. 
+
+-  why not distributed database arch(a basic requirement for no sql db)?
+    - would lead to time latencies which would increase the response time to the occuring fault in the system
+
+- Keys in the designed db:
+    - Trigger 
+        SK& CK & PK = {name,parameter_name}
+    - Action 
+        SK & CK & PK = {name}
+        
+

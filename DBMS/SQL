@@ -1,0 +1,16 @@
+- SQL: Structured Query Language
+- RDBMS: Relational DBMS:- MySQL,MS Access,etc
+
+- Ops:
+    - CRUD
+- Datatypes:
+    - VARCHAR vs CHAR:
+        VARCHAR(255) Dynamically increases the size of the char array upto 255 B
+        CHAR preallocates 255 B of memory to the variable
+    - ENUM
+        One of the preset values will be entered 
+        Ex: Genre {Horror, Comedy, Action, Historic} => movie can have only one of these
+    - SET
+        One or many of the preset values
+        Ex: Question tags {Array,DP,Hashmap} => question can have mulitple of these
+    - JSON [Advanced datatypes]

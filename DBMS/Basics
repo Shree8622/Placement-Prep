@@ -1,0 +1,122 @@
+- Data
+    - Collections of raw figurines 
+- Information
+    - Processed data which gives some sense to the representation of data
+
+- File system vs DBMS
+    - redundancy and inconsistency
+        - bank DB, lets say savings account has address attr and later a current account is added
+          which also has a address attr. Update on either causes an inconsistency
+        - both address attrs are stored seperately: wastage of disk space
+    - difficult to access data  
+        - sql vs request based prgrams for retrieval
+        - different formats
+    - Data isolation
+        - diff formats
+    - Integrity probs
+        - adding a new constraint for a val, INT,LIMIT,etc is tough
+    - Atomicity
+        - spl processes / code which has to execute completely without a context switch
+    - concurrent- access    
+        - resolving multiple client requests
+        - locks have to be implemented manually
+    - Security
+        - rights: admin priviliges and spl user reqs, access permissions can be given
+
+- ABSTRACTION
+    - main goal of abstraction is to hide the irrelevant details of a system in the perspective of a given user
+    - Each user will get his/her own abstract view of data relevant to his participation in the given domain of the DB
+- Achieved through 3 schema architecture
+    - What is schema? 
+        - A skeleton which provides information about how data is organised in the database
+    - 3 schema architecture
+        - Physical level
+            - Defines parameters of data which define how data is stored
+            - Data structure format, Compression formats, Hashing algos used etc
+        - Conceptual/logical level
+            - What data is stored?
+            - Maps the existing domain elements that have to be stored into the db format
+            - Has representations of interactions in the real world domain
+                - Entities
+                - Relationships
+                - Constraints
+        - View level (also called subschema)
+            - Has a defined view schema which contains elements in which that particular user group is intrested in
+            - Optimises queries (addition and deletion of data)
+            - Secures what parts of data are visible to a given user group
+        - Mappings
+            - Physical to logical
+                - achieves physical data independence
+                - any changes in the physical schema dont affect the logical schema
+                - the mapping can be updated in case of a change for optimisation / other purposes
+            - Logical to view
+                - achieves logical data independence
+                - changes in this level doesnt affect the views at the view level (unless and until the changes happen to an element that the view contains)
+- Instance of a DB  
+    - Snapshot of a database at a given instance 
+    - Captures the changes of the transactions that are happening to the database
+    - The instances can be reversed if the given transactions are reversed to the current instance
+- Data models 
+    - Deals with how to design the given data at logical level
+- Languages
+    - DDL: Data Definition Languages
+    - DML: Data Manipulation Languages
+    - both are provided by sql
+    - Query language: A part of DML that serves the CRUD operations from the database and used to define consistency Constraints
+- Connectors: JDBC and ODBC
+- DBMS App architecture
+    - T1 architecture: client,server,DB on the same device
+    - T2 architecture: client is connected to the server through a network, db is on the server recieves query directly from client app
+    - T3 architecture: app client requests a app server which talks to the db; app server and db are located remotely 
+
+
+- Relational models
+    - Data is represented in tables
+    - degree od table: total number of attributes
+    - cardinality of table: total number of tuples
+
+- Types of DB? Graph based?
+
+- Keys
+    - Super key 
+        Any P and C of attr that uniquely identifies a tuple {AB,ABCD,ABE,AC}
+    - Candidate key
+        Minimum subset from superkey that uniquely identifies a tuple (Attrs arent repreated if they dont add information) {AB,ABE,AC}
+    - Primary key
+        A chosen value from CK set that has minimum number of attrs {AB/AC}
+    - Alternate key
+        CK - PK
+    - Foreign key
+        It is a PK of a relation [Parent table] that is referenced from a child table
+        Handles and creates Relationships in between tables
+    - Composite key
+        PK having multple attrs
+    - Compound key 
+        PK formed using 2 or more FK
+    - Surrogate key*
+        integer values added for each tuples when two relations which dont have same/common PK
+        can be used as PK
+-Integrity Constraints
+    - During CRUD ops these constraints should be maintained
+    - Domain constraints 
+        - Control the types and conditional formats of values that reside in the db {EX: Ph no has to be 10 digits and has to be digits!}
+    - Entity constraint 
+        - PK cant be NULL
+        - Every tuple should be uniquely identifiable 
+    - Referntial constraint
+        - Insert constraint:
+            If the value entered to the ref attr isnt present in the parent table, then the constraint fails
+        - Delete constraint 
+            A value in the parent table cant be deleted if it has a referncing tuple in the child table. Can be resolved using 3 methods:
+                - ON DELETE CASCADE: 
+                    deletes all values in the child table that refernece the tuple to bed deleted
+                - ON DELETE NULL:
+                    replaces the values in the child table with NULL 
+                - default: reject the delete request
+- Key constraints 
+    - NOT NULL : Value cant be NULL 
+    - UNIQUE : All the entries in the attr must be unique 
+    - DEFAULT : Set a default value for an attribute entry in the relation
+    - CHECK : Numerical limits and constraints 
+    - PRIMARY KEY
+    - FOREIGN KEY
