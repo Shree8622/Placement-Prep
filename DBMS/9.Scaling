@@ -1,0 +1,42 @@
+- DB Scalability patterns
+    - Problems
+        - API Latency
+
+    - Pattern 1
+        - Query optimisation
+            - Introduce redundancy
+            - Denormalise some relations
+        - Connection Pool implementation
+            - Cache DB connections
+            - Reduce db connects for each threads
+            - auth issues are handled only once
+            
+    - Pattern 2 
+        - Vertical scaling
+        - Pocket friendly till a given point
+    
+    - Pattern 3 {Command Query Responsiblity Segregation [CQRS]}
+        - Replica is created for a given server
+        - Write and read requests are maintained differently
+        - Replicas are introduced which handle reads and replicate with a givne Latency
+        - Primary server serves write requests
+    
+    - Pattern 4 {Multi query replication}
+        - All machines can act as primary and replica
+        - data is divided into logical data rings
+        - Circular replication
+        - Any write request can be given to any server
+    
+    - Pattern 5 {Partitoning data by functionality}
+        - reconstruct the database such that the schemas are designed based on the functionality
+        - Application layer in backend should be able to break down a given request into induvidual requests and then coombine all of the results to give a final combined output back to the system
+
+    - Pattern 6 {Horizontal scaling / Scaling out}
+        - Sharding is applied
+        - Locality of data must be present 
+        - Ex: Indian cab data is useless if its stored in US server.. 
+
+    -  Pattern 7 {Data centre wise partition}
+        - distributing data across data centers in each continent
+        - Replication is used for disaster recovery
+        - Always maintain availability

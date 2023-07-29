@@ -1,0 +1,37 @@
+- Relational DB
+    - Relational model is used
+    - Issues:
+        - Scalability
+        - Data becomes huge, system becomes more complex
+    - Ex: MySQL - matured, support is enormous
+- No SQL
+    - Refer to doc 6
+- Object Oriented DB
+    - Not that popular
+    - Modelling of the scenario in an object oriented approach is necessary
+    - Everything is defined and stored in terms of an object
+    - handles -> ID of object
+    - Stores structured Data
+    - Methods are used to interact between objects
+    Ex: Object DB, Gemstone
+
+- Hierarchial DB    
+    - Ex: Family tree
+    - A parent table relation is always present [concrete hierarchy]
+    - Parent can ahve multiple childs, but a child can have only one parent
+    - Since disk storage is also a hierarchial strucure, can be used as physical models
+    - Adv: 
+        - Easy to use
+        - Adding and deleting will be Easy
+    - Disadv
+        - Cant descibe complex relationships
+        - Requires top to bottom sequential searching
+        - traversal are very slow
+
+    Ex: IBM IMS
+
+- Network DB
+    - Organised in graph type structure
+    - child can have multiple parents
+    - Maintainenece is tedious
+    Ex: Integrated Data Store,IDBMS, Turbo Image

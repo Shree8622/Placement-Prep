@@ -1,0 +1,18 @@
+- Master-Slave architecture
+    - Requests --> Load balancer --> DB
+    - Single point of failure 
+        A single server is handling the requests and if it fails, then whole system fails
+    - Master node => handles all write operations
+    - Replica nodes => handles only read operations and replicate from the master node
+
+- How replications happen?
+    - Asynchronus
+        - Independently updates happen from master to slave 
+        - Delay is accepted for a small amount of time
+    - Synchronous
+        - Updates it whenever there's an update 
+    
+- Advantages
+    - backup
+    - scale-out read operations
+    - increasing availability

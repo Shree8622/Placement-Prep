@@ -1,0 +1,43 @@
+- Clustering 
+    - Horizontal scaling has a limitation 
+    - Replica sets: Same db is copied to multiple servers. A collection of all this is     called one cluster
+    - Why?
+        - Redundancy!
+            - Availability should be maintained
+            - multiple servers are maintained for the service Availability
+        - Load balancing
+        - High Availability
+    - CDN(Content Delivery Networks)
+        - reduces latency
+        - instead of a central server handling all requests, a geographically nearer server stores the required data and transmits it to the user
+        - Growth of large online streaming platforms, Network Service Providers are deploying their own content distribution Networks
+
+        - CDN vs Cloud: 
+            - CDN provides content delivery from the origin server and replicates the data held in the main servers
+            - Cloud is more on service based things: IaaS,SaaS,PaaS, which are connected to the network and provide services to the public
+
+- Partitioning 
+    - Problem:
+        - When handling large amt of data and huge no of requests, a single system will not have all the resources to sustain it
+        - Therefore its better to make it a distributed system
+    
+    - Solution:
+        - Scale-up: Increase the system hardware 
+        - Replica-set(Clustering): 
+            - Master-Slave architecture:
+                - Updates occur to a master and are propogated to the slaves
+                - The slave system holds the same data as of the amster and it can serve for read requests
+        - Partitioning (Scale-out):
+            - New node is added and the data is also partitioned into different groups
+            - Types:
+                - Vertical Partitioning [column wise]
+                - Horizontal Partitioning [row wise]
+- Sharding 
+    - Technique to partition data horizontally
+    - [1 to 100] in one server and [101 to 200] in another server
+    - Both servers are independent
+    - Requires a routing layer in app layer to route the request to a particular shard.
+    - Cons:
+        - Routing layer is required
+        - Non uniformity is formed [One particular shard will have more requests]
+            - Solution: Reshard the db

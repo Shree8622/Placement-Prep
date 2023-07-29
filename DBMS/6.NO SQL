@@ -21,7 +21,7 @@
         - Key-value stores
             - {Key,value} pairs are stored in a doc
             - use effiecient indexing mechanisms to find the document records 
-            Ex: Dynamo DB 
+            Ex: Amazon Dynamo DB 
         - Column based 
             - Insertion is dem slow
             - Read is dem fast

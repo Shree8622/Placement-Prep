@@ -1,0 +1,27 @@
+- CAP
+    - Consistency
+    - Availability
+    - Partition tolerence
+
+- Theorem states that all 3 properties cant exist together in real world.
+  Tradeoff between consistency and Availability when there's a partition
+
+- CA
+    - No partition
+    - Not fault tolerant
+    - deploy it on one node, using replication we can try to solve fault tolerance
+- CP
+    - Whenever there's a partiton, then read requests from the node are stopped until a    consistent replica of the db instance is obtained from the server
+      Ex: Mongo DB
+      Banking systems should be consistent always
+- AP
+    - eventually consistent
+    - after the replicated data is updated to the read servers, consistency is regained
+    - used in cases where buisness logics support inconsistency in read for a given period of time
+    Ex: Cassandra, Amazon Dynamo DB
+
+- BASE properties of db [social networking based dbs]
+    - Basically Available
+    - Soft state 
+        - there can be many changes in the state of the db even if there are no interactions from the user. {Increase in likes overnight,,, ;>}
+    - Eventually consistent 
