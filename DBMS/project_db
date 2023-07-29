@@ -12,14 +12,15 @@
     - weaker security 
     - less efficient concurrency control 
 - why not no-sql
- - dealing with relationships between the entites in an optimised way
- - transactions.. removal and addition of ml-triggers
- - We dont have large amount of unordered data.. which is a perfect usecase for no-sql
- - we have constraints for each attributes.. 
+    - Use case for no-sql is diff
+        - Fast retrievals allowing redundancy to seep in
+        - horizontal scaling to support distributed system executions
+        - sharding to improvise the way data is chunked into different       pieces
+    - We store parameter vals to generate a logstash conf file not updated frequently [We arent storing sensor data but the threshs]
+    - If required, for a given set of system groups, the relations can be sharded
 
--  why not distributed database arch(a basic requirement for no sql db)?
+- why not distributed database arch(a basic requirement for no sql db)?
     - would lead to time latencies which would increase the response time to the occuring fault in the system
-
 - Keys in the designed db:
     - Trigger 
         SK& CK & PK = {name,parameter_name}

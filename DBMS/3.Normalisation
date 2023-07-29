@@ -1,0 +1,65 @@
+- Functional Dep
+    A -> B 
+    
+    A => detereminant
+    B => dependent
+    - It means A can determine B
+    - Types: 
+        - Trivial 
+            Ex: AB -> A 
+            - Dependent is the subset of detereminant
+        - Non-Trivial
+            Ex: AB -> C
+    - Rules (Armstrong's axioms)
+        Consider A -> B 
+        - Reflexive
+            If B is subset of A; A-> B
+        - Augmentation
+            If X -> Y 
+                then we can say AX -> AY 
+        - Transitivity
+            If A -> B and B -> C
+                then A->C 
+- Why normalisation?
+    To reduce redundancy
+- So what if we have redundant data?
+    - Redundant data introduces 3 anomalies
+        - Insertion
+            certain values are unknown at this point of time 
+            [Student hasnt enrolled to branch but has paid a fee, we are storing student and branch details together]
+            - cant insert a branch which doesnt have students.. [lets say a new branch waiting for admission]
+        - deletion
+            Ex: deleting last student enrolled to a branch.. 
+                branch is gayab in db after u delete this entry nw
+        - updation
+            Ex: HOD name is stored with all student records and his value is changed
+- What happens in normalisation?
+    table is decomposed until it implies with SRP (Single Responsiblity Principle)
+- Normal forms
+    - 1 NF
+        - Atomic value in each attr
+        - No multivalued attr 
+        Ex: PhNo=>{120392103,129312023} cant happen!
+    - 2 NF  
+        - No partial dependency
+        - All non prime attr should be fully dependent on PK
+            Ex: R(A,B,C) PK = {AB}, then a FD A->C cant exist
+                As AB is a PK, there can be 4 cases on how a tuple is recognised
+
+                A       B
+                val_a   val_b
+                val_a   NULL  
+                NULL    val_b => in this case, if A-> C exists, NULL determines something.. thts nt possible
+    - 3 NF
+        - No Transitivity
+        - Non prime shouldn't determine a non prime 
+        Ex: R(A,B,C) FD: A->B,B->C PK={A}  
+            Here due to Transitivity, A->C is possile..
+    
+    - BCNF
+        Given A->B, A should be super key
+        B cant contain any prime attributes!
+    - 4 NF  
+        - Mutil-dependent variables arent kept in relation
+    - 5 NF  
+        - Lossless decomposition  [TBD]

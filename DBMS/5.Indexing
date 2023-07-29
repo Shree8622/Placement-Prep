@@ -1,0 +1,59 @@
+- Indexing
+    - Problem: Performance optimisation
+        - Each relation will have a PK and all the tuples will be sorted with respect to that PK
+        - For searching any tuple, we can apply linear.. nah binary search [log(n) Time complexity bruh]
+        - But if the search space is too large, then the access is slow..
+
+    - Solution 
+        - A data structure called Index is used
+        - It stores {key,base pointer} values for a set of uniformly spaced keys.
+        For ex:
+            Records: 1,2,3,4....11,12,13,....,21,22,23.... 
+            Index table:
+                {base:1,Bp:0x1, base:11,Bp:0xb,..}
+    
+    - Types:
+        - Primary Indexing (Clustering indexing)
+            - Applied where the data file is sequentially sorted 
+            - A search key can be PK or a non prime attr
+            - Dense Index 
+                - every search key value is present in the index 
+                -  in case multiple records are present for that particular search key, the first record location is stored
+            - Sparse index
+                - An index that has only some search key values
+                - helps in finding some block which contains the search key
+
+            - Sorted based on key attr:
+                - Usually Sparse indexing is used with this
+                - as we know that the records are sorted using the PK/CK attrs 
+            - Sorted based on non-key attr:
+                - Dense indexing is used
+                - Every unique value is indexed
+                - Ex: Records=>{1*,1,1,2*,2,2,2,3*,3,4*,4}
+                      Indexes stored =>{1*,2*,3*,4*}
+            - Multi level indexing
+                - used in large files
+                Ex: Records=>{1,2,3,...1000,1001,1002,.....2000..}
+                    Index lvl-1 =>{[1-100],[101-200],[201-300]..} => Secondary index 
+                    Index lvl-2 =>{[1-1000],[1001-2000]} => Primary index 
+        - Secondary indexing
+            - Applied on unsorted data files or
+                Ex: R(USN,Hometown)
+                    When u sort based on USN which is PK, the hometown attr is completely unsorted and secondary indexing helps us to optimise finding records in situations like this 
+
+            - Dense indexing is used 
+            - If search key values repeat in the relation, then all the entries are stored in a linked list format
+            Ex: Position   0 1  2  3  4  5 6 7  8
+                Records=> {1,99,55,22,1,43,2,90,87..}
+                Indexes stored =>
+                [
+                    { 1 => [0,4] } // 1 is present at position 0 and 4 
+                    { 2 => [6] }
+                    { 22 => [3] }
+                    { 43 => [5]}
+                    { 55 => [2]}
+                    { 87 => [8]}
+                    { 90 => [7]}
+                    { 99 => [1]}
+                ]
+            - Now binary search can be applied on these indexes 

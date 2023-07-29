@@ -1,0 +1,48 @@
+- Transaction
+    - A unit of work done against the DB.
+      A Sequence of operations with the DB
+    - If the unit of wrk has failed in between, the db instance is rolled back to the previous instance
+- ACID properties
+    - Atomicity
+        Either all changes are done in DB or none are reflected
+        If a transaction is sucessful, its fine
+        if it fails, then instance is rolled back 
+    - Consistency
+        All integrity constraints are maintaned after transactions
+    - Isolation
+        There shouldn't be any influence of a given transaction over other transactions 
+    - Durability
+        After transaction, the change in the db state should persist permanently, even if there is a system failure
+- States of transaction
+    - Active state: Read/Write ops are happening
+    - Partially committed: Read/Write changes are saved in a buffer of main memory
+    - Commit state: db.commit() => all changes are done and valid => Changed instance
+    - Terminated: Final state 
+        If successful, instance 2 is saved else original instance
+- How is atomicity achieved?
+    - Shadow copy scheme
+        - A copy of current state of db is loaded to RAM
+        - Changes are made to the state
+        - new copy is said to be commited when the db pointer is written to the disk and the ptr is updated to the new copy 
+        => commit is notified only when the pointer is updated to the new instance 
+        => write to the db pointer is assumed to be atomic 
+        * Inefficient
+    - Log based recovery
+        - stored under stable storage 
+        - stable storage => has atomic read writes; durable to system crashes
+        - Types
+            - Deffered DB modification
+                - Logs are written until the commit state is attained
+                - Changes are written only when changes are committed
+                - If system crashed before commit() stage, logs are ignored
+                - If system fails at writing commits stage, the commit is performed again.
+            - Immediate DB modification
+                - Log along with modification is done for every operations
+                Ex: <T0,start>
+                    <T0,A,100,200> A is changed from 100 to 200
+                    <T0,B,1,-1> B is changed from 1 to -1
+                    <T0,commit> 
+                - If failed before commit, old value is written to the db instance using logs (100=>A,1=>B) and the operation is performed again
+    - Checkpoint based recovery 
+        - All transactions before a given checkpoint is said to be valid / complete
+        - The transactions are rolled back into the checkpoint if any kind of failure occurs

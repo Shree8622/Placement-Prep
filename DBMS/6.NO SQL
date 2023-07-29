@@ -1,0 +1,46 @@
+- No SQL {Not Only SQL}
+    - Advantages:
+        - Flexible schema:
+            Ex: Null vals need not be stored
+            {"Name":"A", Location:"Tmk"},{"Name":"B"}
+            - Location attr is null for second record automatically!
+        - Horizontal scaling
+            - parts of db can stored seperately ny using sharding* and replication*
+        - High availabiltiy
+            - Replica sets are maintained
+            - No loss in services
+        - Easy insert and read ops
+            - since joins arent req, read ops are vary fast in no sql db
+            - Rule is that "Data that should be accessed together is stored together"
+    - Use cases:
+        - Fast dev
+        - Huge volumes of Data
+        - Reqs of scale-out architecture
+        - Used in paradigms like micro-services
+    - Types:
+        - Key-value stores
+            - {Key,value} pairs are stored in a doc
+            - use effiecient indexing mechanisms to find the document records 
+            Ex: Dynamo DB 
+        - Column based 
+            - Insertion is dem slow
+            - Read is dem fast
+            - used in analytics
+            Ex: Cassandra
+        - Document based
+            - stores data similar to the format of JSON objects
+            - used widely in cloud industry* 
+            [can get grilled about this :< ]
+            - supports ACID
+            Ex: Mongo DB, Couch DB 
+        - Graph based stores
+            - Representation; Nodes(entities) and edges(relationships)
+            - Overcomes JOIN overheads found in SQL 
+            Ex: NEOJ
+    - Disadv;
+        - Redundancy(More memory)
+        - Update and Delete are costly
+        - Doesnt support ACID
+        - doesnt support consistency constraints 
+    
+            
