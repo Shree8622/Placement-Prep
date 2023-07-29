@@ -1,0 +1,82 @@
+- Class
+    - logical construct of an object
+    - User defined datatype  
+
+- Empty class will have size of 1 B
+
+- Objects
+    - instance of a Class
+    - stored in heap memory
+    - creating an object => new keyword
+    - accessing the object
+        - dot operator
+        ref(stored in stack) --> object(heap)
+        Student 0xff              (at 0xff) {USN,name}
+
+- Access modifiers
+    - private 
+    - public
+    - protected
+    - default
+
+- getter and setter functions
+    - used to get and set values into properties of a class [which are private]
+
+- Padding
+    - Every datatype has alignment requirements
+    - Processing word length will be 4 bytes on a 32 bit machine; So if processor calls a fetch, 4B will be fetched
+    - So to optimise this, during allocation objects are given space in multiples of 4. 
+    - So even if u have an object that occupies 5B, the memory allocated to it will be 8B.
+    
+- Greedy allocation of memory
+    - No odd byte boundaries are made
+    - Allocates all members of a structure in a way such that minimum padding is achieved
+    
+- Constructor
+    - default Constructor
+        - no return type
+        - this keyword is used to refer to the current object
+    - parameterised Constructor 
+    - copy Constructor
+        - an object is passed into the Constructor
+        - deep copy can be done manually using copy constructor 
+        - cant pass by value. should use pass by ref 
+    - overloading
+        - different parameter types and number of parameters
+    - calling a const from another Constructor
+    Ex:
+        Const()
+        {
+            this(1,2,3)
+        }
+        Const(int a,int b,int c)
+        {
+            this.val=a+b+c;
+        }
+- Deep vs Shallow copy
+    - default copy constructor uses shallow copy
+    - vaiables like character arrays or any references to heap will be copied from the initial object
+    - A seperate copy must be made so that a change in the first object doesnt result in change of the second object
+
+- Destructor
+    - For a statically generated object, destrcutor is called automatically
+    - For a dynamically created object destructor has to be called manually{CPP}
+    - Use a '~' operator for destrcutor {CPP}
+    - finalise() method works like a destrcutor for an object. It is defined inside the given class {Java}
+
+- Static 
+    - static variable doesnt belong to a given object
+    - belongs to a class
+    - static functions can only access static variables
+
+- Wrapper Class 
+    - classes written for primitive datatypes such as int,float,etc
+        - Integer for int 
+        - Float for float
+    - Advantage is that we get to use spl functions and we can use pass by ref only for Objects
+    
+- final keyword
+    - variable's value cant be modified 
+        - Exception when the variable is a non-primitive, you can make changes to that object's values
+    - function cant be overrided 
+    - Class cant be inherited
