@@ -60,6 +60,6 @@
         Given A->B, A should be super key
         B cant contain any prime attributes!
     - 4 NF  
-        - Mutil-dependent variables arent kept in relation
+        - Multi-dependent variables arent kept in relation
     - 5 NF  
         - Lossless decomposition  [TBD]

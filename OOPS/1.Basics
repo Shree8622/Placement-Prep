@@ -41,10 +41,6 @@
 ----------------------Surprises------------------------------
 - Cpp allows multiple inheritance hence doesnt have super keyword
 
-- Operators that cant be overloaded are  
-	. (dot)  
-	::(scope resolution) 
-	?:(ternary)   
-	sizeof() 
+
 
 - 'this' operator is used with '->' in cpp whereas '.' in java

@@ -1,0 +1,71 @@
+- Encapsulation
+    - Data members[states] and member functions[methods] are wrapped in a single entity
+    - A class implements Encapsulation
+    - Fully encapsulated class  
+        - All members are private
+    - Adv?
+        - Information hiding 
+        - we cant access the members of a class outside the class if we dont write getter and setter functions
+        - Code reusability
+        - Unit testing
+
+- Inheritance
+    - A class inherits/ acquires data members and member functions from another class
+    - Parent class --> Child class
+    - Types:
+        - Single 
+            A -> B
+        - Multi level
+            A -> B -> C
+        - Hierarchial
+            A -> {B,C,D}
+        - Multiple
+            {A,B} -> C
+        - Hybrid inheritance
+            Multi-level + Multiple inheritance
+    - Ambiguity
+        - Multiple inheritance causes this
+        - consider {A,B} both have a function named abc()
+        - now if class C inherits both A and B,
+            it should use scope resolution operator to refer to the function implementation that it is referring to.
+        - Solution: virtual class
+            - there's no duplication of implementation in a hybrid inheritance
+            Ex: A -> {B,C} -> D 
+            now B,C have to be declared virtual to make sure D doesnt have multiple implementations of a function in A
+
+- Polymorphism*
+    - single object has Multiple forms
+    - Types:
+        - compiletime
+            - function overloading
+                - differing by parameter [type and number]
+                - default parameters
+            - operator overloading [only in cpp]
+                - Ex: {+} add and string conatenation
+                - Operators that cant be overloaded are  
+                    . (dot)  
+                    ::(scope resolution) 
+                    ?:(ternary)   
+                    sizeof() 
+        - runtime
+            - function overriding
+
+- Abstraction
+    - Implementation hiding
+    - Showing only required Information
+    - Using access modifiers
+    - Advantages:
+        - Control over who can change what
+        - Increases reusability
+        - Avoids duplication
+
+    - Interfaces    
+        - SAM Interfaces
+        - Interfaces dont 'may' contain implementation of the functions
+        - Interfaces v/s Abstract classes
+            - If no implementation is known, Interfaces
+            - If it is partially known, Abstract classes 
+    - Abstract classes  
+        - cant have objects only refernces
+        - contain atleast one abstract method
+         

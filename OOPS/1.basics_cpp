@@ -80,3 +80,6 @@
         - Exception when the variable is a non-primitive, you can make changes to that object's values
     - function cant be overrided 
     - Class cant be inherited
+- friend class [only in cpp] 
+    - A friend class is offered spl priviliges to acces the private and protected members and functions
+    - It can be a global function / member of another class also
