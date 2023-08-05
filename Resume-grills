@@ -15,3 +15,12 @@
     - Flask
         - based on wsgi (web server gateway interface)
         - jinja2 template engine
+- Quantum:
+    - BB84 protocol
+    - Qubit
+    - Differences, shors algo, optimisation
+
+-Project:
+    - CLI: Click
+        - not argparse coz it guesses what is option and what is argument
+    - ML: 
