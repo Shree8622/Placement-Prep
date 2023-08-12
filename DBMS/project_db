@@ -1,3 +1,5 @@
+-"info":  these are my internship project based questions which I asked myself
+
 - what is the need of the database?
     - to store triggers and actions at a centralised location
     - would be used in reconstruction of the logstash configuration file
@@ -15,7 +17,7 @@
     - Use case for no-sql is diff
         - Fast retrievals allowing redundancy to seep in
         - horizontal scaling to support distributed system executions
-        - sharding to improvise the way data is chunked into different       pieces
+        - sharding to improvise the way data is chunked into different pieces
     - We store parameter vals to generate a logstash conf file not updated frequently [We arent storing sensor data but the threshs]
     - If required, for a given set of system groups, the relations can be sharded
 

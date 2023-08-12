@@ -1,27 +1,28 @@
 - Technical:
-    - Tell me about yourself (After 3 mins of awk silence)
+    - Tell me about yourself (After 3 mins of awk silence and searching for my resume in their software)
     - Tell us about your CTY project that you worked on in the internship
-    - Which language do u code in?
+    - Which language do u code with?
     - Write merge sort code on the board
     - What is the complexity analysis of the code?
     - Which sorting algorithm is best? Why?
     - Are you comfortable with networking concepts?
-        - If you enter 'google.com' in your browser, what happens?
+        - If you enter 'google.com' in your browser, what will happen?
     - Did you use databases in your projects? What is the diff b/w SQL and no-SQL?
     - Which is better? Compiler or Interpreter? Why?
     - How do you pass Command line arguments?
     - Why did you go for click package and not argparse in your project?
     - Any questions for us?
-        - Is HPE investing in quantum?
-        - What are the divisions at HPE?
+        - I asked: 
+            - Is HPE investing in quantum computing?
+            - What are the divisions at HPE?
 
 - Managerial:
     - Introduce yourself
-    - (Saw my CIRQuIT mention) How did you get into this club? Why did u go?
+    - (Saw my CIRQuIT mention in the resume) How did you get into this club? Why did u go?
     - You have intrests in different domains, what is the main path/domain that 
       you want to work on right now?
     - What do you want to do as a employee at HPE?
-    - What difficulties in the team did you face in this project?
+    - I see you in leadership roles in your resume, what is one difficulty that you've faced until now?
     - What is a significant problem that you faced in your life until now?
 
 - HR:
@@ -29,5 +30,4 @@
     - What do you think HPE does(Products that they offer n stuff)?
     - What do you want to add into the culture of HPE?
     - Do you want to do masters?
-    - Why HPE? How does the intrests align?
-    
+    - Why HPE? How does the intrests align?  

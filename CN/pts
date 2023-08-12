@@ -1,34 +1,32 @@
-- NIC: Network Interface Controller
-- MAC address: Media Access Control Address assigned to a NIC which is used for network communications in a given network
-- NAS: Network Attached Storage server that holds files that can be accessed by the computer connected on a LAN
-- NTFS: New technology file system
-- packet switching: A packet can take different paths to reach the same destination from a given source
-- ICANN: Intl Association for Assigned names and Numbers
-- DHCP: Dynamic Host Configuration Protocol
-  - Runs at application layer at TCP/IP stack
-  - Used to assign dynamic IP addr to all hosts in a netowrk
-  - Steps:
-    - Discover
-    - Offer
-    - Request
-    - Ack
-- PSTN: Public Switched Telephone Network
-- Topologies:
-  - Mesh: Kn graph, every node is connected to every other node
-  - Star: One central host is connected to all the other hosts
-  - Ring: Circular connectivity
-  - Tree: Bus + Star
-  - Bus: Single common line connecting all the systems
+- Some IMP pts
+  - NIC: Network Interface Controller
+  - MAC address: Media Access Control Address assigned to a NIC which is used for network communications in a given network
+  - NAS: Network Attached Storage server that holds files that can be accessed by the computer connected on a LAN
+  - NTFS: New technology file system
+  - packet switching: A packet can take different paths to reach the same destination from a given source
+  - ICANN: Intl Association for Assigned names and Numbers
+  - DHCP: Dynamic Host Configuration Protocol
+    - Runs at application layer at TCP/IP stack
+    - Used to assign dynamic IP addr to all hosts in a netowrk
+    - Steps:
+      - Discover
+      - Offer
+      - Request
+      - Ack
+  - PSTN: Public Switched Telephone Network
+  - Topologies:
+    - Mesh: Kn graph, every node is connected to every other node
+    - Star: One central host is connected to all the other hosts
+    - Ring: Circular connectivity
+    - Tree: Bus + Star
+    - Bus: Single common line connecting all the systems
 
-- Devices at each OSI layer:
-  - Physical: network hubs, cabling, repeaters, network adapters or modems
-  - Data link: NIC and switch
-    - MAC[Media Access Control] layer: flow control and multiplexing for device transmissions over network
-    - LLC[Logical link control] layer : identifies line protocols and provides flow,error control over physical medium
-  - Network: Router
-  - Transport: Gateway
-  
-- CDN: Content Delivery Network
-
-- OSI{Open System Interconnect}
-  - 
+  - Devices at each OSI layer:
+    - Physical: network hubs, cabling, repeaters, network adapters or modems
+    - Data link: NIC and switch
+      - MAC[Media Access Control] layer: flow control and multiplexing for device transmissions over network
+      - LLC[Logical link control] layer : identifies line protocols and provides flow,error control over physical medium
+    - Network: Router
+    - Transport: Gateway
+    
+  - CDN: Content Delivery Network

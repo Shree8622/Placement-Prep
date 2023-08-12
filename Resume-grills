@@ -1,3 +1,4 @@
+- Deep knowledge about things mentioned in the resume
 - Skills:
     - Python
         - dynamically typed
@@ -23,4 +24,4 @@
 -Project:
     - CLI: Click
         - not argparse coz it guesses what is option and what is argument
-    - ML: 
+    - ML: ARIMA models; Time series prediction models
