@@ -1,0 +1,45 @@
+- Total rounds = 3
+- Round 1: Technical round-1 
+  - Introduce yourelf
+  - After mentioning about my position at CIRQuIT, was asked to explain Quanutm Computing to a layman
+  - Coding Question : Reverse Nodes in k-Group
+    - link: https://leetcode.com/problems/reverse-nodes-in-k-group/
+    - A detailed solution with code involoving a long discussion on edge cases
+    - Time complexity analysis
+
+  - Any questions about the company?
+- Round 2: Technical round-2
+  - Introduce yourself
+  - Coding question: Word ladder
+    - link: https://leetcode.com/problems/word-ladder/
+    - A bit of confusion in the start about the approach
+    - Discussed about the representation of the current array of words in a graph.. criteria for an edge,etc
+    - Type of traversal chosen,etc
+    - Final code was accepted but asked for an optimised approach
+    - Time complexity analysis
+
+At this point.. I thought I'll be rejected as other knew the solutions beforehand for the leetcode hard questions and they breezed through
+Somehow I made it to round 3
+
+- Round 3: Managerial round
+  - Introduce yourself (Was asked more on the family,schooling,etc)
+  - Why choose Greenlight?
+  - Where do you see yourself in 5 years?
+  - Will you go for masters?
+  - Lets say you have an optimised code than your teammate and you know for sure it is better and can contribute to the cause. How will you handle it if:
+    - Your teammate is a fresher
+    - Your teammate has 4-5 yrs experience in the industry
+  - How do you work under highly supervised teams? (If the mentor is highly intrested in knowing what youre upto)
+  
+- Round 4: HR
+  - Introduce yourself
+  - How were your previous interviews.. say a line about each round
+  - What is your main source of motivation?
+  - Given four entites [College,Course,Teacher,Student], design a DB, I want to see the steps you follow to design a database
+  - Did you have a look on the products of greenlight?
+  - Give some examples from your journey relevant to these words
+    - Brave
+    - Teamwork
+    - Leader
+  - Any questions for me? 
+    (I asked about the role and the main motive of the company... discussion went on for 20 mins only on this question)
